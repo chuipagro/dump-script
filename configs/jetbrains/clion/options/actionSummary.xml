@@ -1,0 +1,115 @@
+<application>
+  <component name="ActionsLocalSummary">
+    <e n="$SelectAll">
+      <i c="5" l="1772909754491" />
+    </e>
+    <e n="$Undo">
+      <i c="4" l="1772909793656" />
+    </e>
+    <e n="CPP.CreateNewCLionProject">
+      <i c="2" l="1780060846615" />
+    </e>
+    <e n="CWMHostShowPopupAction">
+      <i c="1" l="1772910733907" />
+    </e>
+    <e n="ChangesView.Refresh">
+      <i c="2" l="1773046263575" />
+    </e>
+    <e n="EditorBackSpace">
+      <i c="148" l="1780060850980" />
+    </e>
+    <e n="EditorCopy">
+      <i c="4" l="1772909601511" />
+    </e>
+    <e n="EditorDown">
+      <i c="12" l="1772815827660" />
+    </e>
+    <e n="EditorEnter">
+      <i c="4" l="1772815703233" />
+    </e>
+    <e n="EditorIndentSelection">
+      <i c="4" l="1772815996650" />
+    </e>
+    <e n="EditorLeft">
+      <i c="20" l="1772807943313" />
+    </e>
+    <e n="EditorPaste">
+      <i c="9" l="1772909755926" />
+    </e>
+    <e n="EditorRight">
+      <i c="11" l="1772815824660" />
+    </e>
+    <e n="EditorStartNewLine">
+      <i c="8" l="1772808035298" />
+    </e>
+    <e n="EditorTab">
+      <i c="5" l="1772816003585" />
+    </e>
+    <e n="EditorUp">
+      <i c="3" l="1772807946780" />
+    </e>
+    <e n="ExpandRecursively">
+      <i c="4" l="1774959706122" />
+    </e>
+    <e n="Git.Commit.And.Push.Executor">
+      <i c="13" l="1772910146593" />
+    </e>
+    <e n="OpenFile">
+      <i c="1" l="1774883334963" />
+    </e>
+    <e n="ProjectViewExpandAll">
+      <i c="5" l="1774959707258" />
+    </e>
+    <e n="RedesignedRunConfigurationSelector">
+      <i c="1" l="1774259567483" />
+    </e>
+    <e n="SettingsEntryPoint">
+      <i c="6" l="1775054651215" />
+    </e>
+    <e n="SettingsSyncStatusAction">
+      <i c="1" l="1772910760213" />
+    </e>
+    <e n="ShowSettings">
+      <i c="1" l="1772807873378" />
+    </e>
+    <e n="WelcomeScreen.Plugins">
+      <i c="1" l="1775054652561" />
+    </e>
+    <e n="com.intellij.execution.actions.RunSpecifiedConfigExecutorAction">
+      <i c="1" l="1774259572219" />
+    </e>
+    <e n="com.intellij.notification.NotificationAction$Simple">
+      <i c="2" l="1775054620685" />
+    </e>
+    <e n="com.intellij.openapi.fileEditor.impl.tabActions.CloseTab">
+      <i c="8" l="1774268230749" />
+    </e>
+    <e n="com.intellij.openapi.project.DumbAwareAction$SimpleDumbAwareAction">
+      <i c="2" l="1773046092806" />
+    </e>
+    <e n="com.intellij.openapi.updateSettings.impl.UpdateSettingsEntryPointActionProvider$IdeUpdateAction">
+      <i c="1" l="1775054639295" />
+    </e>
+    <e n="com.intellij.openapi.wm.impl.SquareAnActionButton">
+      <i c="16" l="1773046267576" />
+    </e>
+    <e n="com.intellij.openapi.wm.impl.customFrameDecorations.header.toolbar.MainMenuButton$ShowMenuAction">
+      <i c="9" l="1780060844449" />
+    </e>
+    <e n="com.intellij.openapi.wm.impl.welcomeScreen.ActionGroupPanelWrapper$3">
+      <i c="2" l="1772806341015" />
+    </e>
+    <e n="com.intellij.terminal.frontend.action.SendShortcutToTerminalAction">
+      <i c="15" l="1772910131853" />
+    </e>
+    <e n="com.intellij.ui.dsl.builder.components.SegmentedButtonAction">
+      <i c="1" l="1773046176180" />
+    </e>
+    <e n="copilot.loginGitHub">
+      <i c="1" l="1772807685235" />
+    </e>
+    <e n="org.jetbrains.ide.ToolboxUpdateAction">
+      <i c="1" l="1772910749120" />
+    </e>
+  </component>
+</application>

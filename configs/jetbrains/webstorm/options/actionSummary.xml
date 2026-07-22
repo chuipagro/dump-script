@@ -1,0 +1,217 @@
+<application>
+  <component name="ActionsLocalSummary">
+    <e n="$Delete">
+      <i c="1" l="1770588458536" />
+    </e>
+    <e n="$Undo">
+      <i c="5" l="1780998248626" />
+    </e>
+    <e n="CWMHostShowPopupAction">
+      <i c="1" l="1779202398137" />
+    </e>
+    <e n="CallSaul">
+      <i c="2" l="1780494567488" />
+    </e>
+    <e n="ChangesView.Refresh">
+      <i c="1" l="1780501312996" />
+    </e>
+    <e n="EditorBackSpace">
+      <i c="239" l="1784275724194" />
+    </e>
+    <e n="EditorChooseLookupItem">
+      <i c="3" l="1780493540414" />
+    </e>
+    <e n="EditorCopy">
+      <i c="2" l="1778158933312" />
+    </e>
+    <e n="EditorCut">
+      <i c="1" l="1778158742106" />
+    </e>
+    <e n="EditorDown">
+      <i c="7" l="1780493618051" />
+    </e>
+    <e n="EditorEnter">
+      <i c="19" l="1780499257597" />
+    </e>
+    <e n="EditorLeft">
+      <i c="78" l="1780493581611" />
+    </e>
+    <e n="EditorPaste">
+      <i c="7" l="1780562159622" />
+    </e>
+    <e n="EditorRight">
+      <i c="20" l="1780493608166" />
+    </e>
+    <e n="EditorStartNewLine">
+      <i c="7" l="1780493639644" />
+    </e>
+    <e n="EditorUp">
+      <i c="9" l="1780493609323" />
+    </e>
+    <e n="ExpandAll">
+      <i c="1" l="1780494665283" />
+    </e>
+    <e n="ExpandAllRegions">
+      <i c="7" l="1778159335509" />
+    </e>
+    <e n="ExpandRegion">
+      <i c="4" l="1778159333699" />
+    </e>
+    <e n="FileChooser.Delete">
+      <i c="3" l="1772098074904" />
+    </e>
+    <e n="FileChooser.NewFolder">
+      <i c="1" l="1772098203642" />
+    </e>
+    <e n="Find">
+      <i c="1" l="1770391221391" />
+    </e>
+    <e n="FindInPath">
+      <i c="2" l="1779202405201" />
+    </e>
+    <e n="Floating.CodeToolbar.JS.Refactor">
+      <i c="1" l="1780998229042" />
+    </e>
+    <e n="Git.Commit.And.Push.Executor">
+      <i c="18" l="1784275730694" />
+    </e>
+    <e n="HideActiveWindow">
+      <i c="1" l="1778490093289" />
+    </e>
+    <e n="HideAllWindows">
+      <i c="1" l="1780495135089" />
+    </e>
+    <e n="InsertInlineCompletionAction">
+      <i c="1" l="1779202548647" />
+    </e>
+    <e n="NewFile">
+      <i c="3" l="1780493490847" />
+    </e>
+    <e n="OpenFile">
+      <i c="17" l="1782218499088" />
+    </e>
+    <e n="ProblemsView.Options">
+      <i c="1" l="1780494659628" />
+    </e>
+    <e n="ProblemsView.QuickFixes">
+      <i c="1" l="1780494988727" />
+    </e>
+    <e n="ProblemsView.ShowPreview">
+      <i c="1" l="1780494661607" />
+    </e>
+    <e n="RedesignedRunConfigurationSelector">
+      <i c="2" l="1780494779436" />
+    </e>
+    <e n="RenameElement">
+      <i c="2" l="1778158840611" />
+    </e>
+    <e n="RunAnything">
+      <i c="1" l="1780996891840" />
+    </e>
+    <e n="SaveAll">
+      <i c="1" l="1778169705746" />
+    </e>
+    <e n="SettingsEntryPoint">
+      <i c="5" l="1780495043282" />
+    </e>
+    <e n="SettingsSyncStatusAction">
+      <i c="1" l="1770390844794" />
+    </e>
+    <e n="ShowIntentionActions">
+      <i c="3" l="1780998247898" />
+    </e>
+    <e n="ShowNpmScripts">
+      <i c="2" l="1780494695577" />
+    </e>
+    <e n="ShowSettings">
+      <i c="7" l="1780494826305" />
+    </e>
+    <e n="Stop">
+      <i c="4" l="1780494898296" />
+    </e>
+    <e n="Terminal.CommandCompletion.InsertSuggestion">
+      <i c="4" l="1779092898644" />
+    </e>
+    <e n="Terminal.CommandCompletion.SelectSuggestionBelow">
+      <i c="1" l="1771419966246" />
+    </e>
+    <e n="Terminal.CopySelectedText">
+      <i c="9" l="1780562283217" />
+    </e>
+    <e n="Terminal.NewTab">
+      <i c="3" l="1780562400929" />
+    </e>
+    <e n="Terminal.Paste">
+      <i c="1" l="1771419956912" />
+    </e>
+    <e n="TextEditorWithPreview.Layout.EditorOnly">
+      <i c="1" l="1780060134732" />
+    </e>
+    <e n="WelcomeScreen.OpenDirectoryProject">
+      <i c="1" l="1770390787532" />
+    </e>
+    <e n="WelcomeScreen.Plugins">
+      <i c="1" l="1770390869263" />
+    </e>
+    <e n="com.intellij.execution.lineMarker.LineMarkerActionWrapper">
+      <i c="6" l="1779092736038" />
+    </e>
+    <e n="com.intellij.grazie.ide.notification.GrazieToastNotifications$showMissedLanguages$3">
+      <i c="1" l="1780495118828" />
+    </e>
+    <e n="com.intellij.ide.startup.importSettings.chooser.productChooser.SkipImportAction">
+      <i c="1" l="1770390718682" />
+    </e>
+    <e n="com.intellij.javascript.nodejs.packageJson.notification.PackageJsonGetDependenciesAction">
+      <i c="1" l="1780494930078" />
+    </e>
+    <e n="com.intellij.javascript.nodejs.packageJson.notification.PackageJsonUpdateNotifier$PackageJsonDismissAction">
+      <i c="1" l="1780495000676" />
+    </e>
+    <e n="com.intellij.lang.javascript.buildTools.base.JsbtTaskTreeView$EditRunSettingsAction">
+      <i c="5" l="1780494845619" />
+    </e>
+    <e n="com.intellij.lang.javascript.buildTools.base.JsbtTaskTreeView$ReloadTasks">
+      <i c="1" l="1780494787387" />
+    </e>
+    <e n="com.intellij.lang.javascript.linter.eslint.lsWidget.OpenEsLintErrorServiceAction">
+      <i c="1" l="1780495024515" />
+    </e>
+    <e n="com.intellij.lang.javascript.linter.eslint.lsWidget.RestartSingleEsLintServiceAction">
+      <i c="1" l="1780495019336" />
+    </e>
+    <e n="com.intellij.notification.NotificationAction$Simple">
+      <i c="7" l="1780998312077" />
+    </e>
+    <e n="com.intellij.openapi.editor.impl.EditorMarkupModelImpl$TrafficLightAction">
+      <i c="3" l="1780494977481" />
+    </e>
+    <e n="com.intellij.openapi.fileEditor.impl.tabActions.CloseTab">
+      <i c="12" l="1780495146135" />
+    </e>
+    <e n="com.intellij.openapi.project.DumbAwareAction$SimpleDumbAwareAction">
+      <i c="7" l="1780495010026" />
+    </e>
+    <e n="com.intellij.openapi.updateSettings.impl.UpdateSettingsEntryPointActionProvider$2">
+      <i c="1" l="1780495046852" />
+    </e>
+    <e n="com.intellij.openapi.wm.impl.SquareAnActionButton">
+      <i c="73" l="1784275705216" />
+    </e>
+    <e n="com.intellij.openapi.wm.impl.customFrameDecorations.header.toolbar.MainMenuButton$ShowMenuAction">
+      <i c="23" l="1783694523524" />
+    </e>
+    <e n="com.intellij.platform.lang.lsWidget.OpenSettingsAction">
+      <i c="1" l="1780494583201" />
+    </e>
+    <e n="com.intellij.terminal.frontend.action.SendShortcutToTerminalAction">
+      <i c="160" l="1780994166445" />
+    </e>
+    <e n="com.intellij.toolWindow.ShowMoreToolWindowsAction">
+      <i c="1" l="1770390979816" />
+    </e>
+    <e n="com.intellij.ui.NotificationBalloonActionProvider$3">
+      <i c="1" l="1780494514095" />
+    </e>
+  </component>
+</application>

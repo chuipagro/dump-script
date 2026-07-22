@@ -1,0 +1,4 @@
+-Xmx2048m
+-Dide.managed.by.toolbox=/home/chuipagro/Downloads/jetbrains-toolbox-3.2.0.65851/bin/jetbrains-toolbox
+-Dtoolbox.notification.token=18dba4e9-66eb-4d9a-bb89-e7698c7f97b9
+-Dtoolbox.notification.portFile=/home/chuipagro/.cache/JetBrains/Toolbox/ports/803530d8-c220-4621-a836-12061aea2f69.port

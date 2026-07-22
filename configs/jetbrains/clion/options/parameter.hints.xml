@@ -1,0 +1,9 @@
+<application>
+  <component name="ParameterNameHintsSettings">
+    <blacklists>
+      <blacklist language="C/C++">
+        <added pattern="sf::Vector2::Vector2(X,Y)" />
+      </blacklist>
+    </blacklists>
+  </component>
+</application>

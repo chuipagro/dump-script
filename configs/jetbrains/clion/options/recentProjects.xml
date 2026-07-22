@@ -1,0 +1,54 @@
+<application>
+  <component name="RecentProjectsManager">
+    <option name="additionalInfo">
+      <map>
+        <entry key="$USER_HOME$/projects/neuroneNetwork">
+          <value>
+            <RecentProjectMetaInfo frameTitle="neuroneNetwork" projectWorkspaceId="3BfdxrMbZqLNSSLU4qbsWAsqzRT">
+              <option name="activationTimestamp" value="1775054714550" />
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="build" value="CL-253.30387.78" />
+              <option name="buildTimestamp" value="1769005800000" />
+              <option name="colorInfo">
+                <RecentProjectColorInfo associatedIndex="5" />
+              </option>
+              <frame x="102" y="232" width="1400" height="1000" extendedState="6" />
+              <option name="productionCode" value="CL" />
+              <option name="projectOpenTimestamp" value="1774884310698" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/projects/defender">
+          <value>
+            <RecentProjectMetaInfo frameTitle="defender – Map.hpp" projectWorkspaceId="3AZiDibHyouEu8EWIXEAS4LOaQ0">
+              <option name="activationTimestamp" value="1780060817004" />
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="build" value="CL-253.30387.78" />
+              <option name="buildTimestamp" value="1769005800000" />
+              <option name="colorInfo">
+                <RecentProjectColorInfo associatedIndex="4" />
+              </option>
+              <frame x="8" y="40" width="1406" height="1456" />
+              <option name="productionCode" value="CL" />
+              <option name="projectOpenTimestamp" value="1780060430471" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/projects/untitled">
+          <value>
+            <RecentProjectMetaInfo opened="true" projectWorkspaceId="3EOsBv5CtbgSohI1oEvgjnsl3ax">
+              <option name="activationTimestamp" value="1780060898488" />
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="build" value="CL-253.30387.78" />
+              <option name="buildTimestamp" value="1769005800000" />
+              <option name="productionCode" value="CL" />
+              <option name="projectOpenTimestamp" value="1780060817481" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="lastOpenedProject" value="$USER_HOME$/projects/untitled" />
+    <option name="lastProjectLocation" value="$USER_HOME$/projects" />
+  </component>
+</application>

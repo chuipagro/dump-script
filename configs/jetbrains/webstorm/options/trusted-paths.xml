@@ -1,0 +1,17 @@
+<application>
+  <component name="Trusted.Paths">
+    <option name="TRUSTED_PROJECT_PATHS">
+      <map>
+        <entry key="$USER_HOME$/projects/bedrock-orga/bedrock" value="true" />
+        <entry key="$USER_HOME$/projects/bedrock-orga/bedrock-sdk" value="true" />
+        <entry key="$USER_HOME$/projects/bedrock/front" value="true" />
+        <entry key="$USER_HOME$/projects/dashboard" value="true" />
+        <entry key="$USER_HOME$/projects/defender" value="true" />
+        <entry key="$USER_HOME$/projects/suivi-helper" value="true" />
+        <entry key="$USER_HOME$/projects/wiki_bach" value="true" />
+        <entry key="$USER_HOME$/rattrapages" value="true" />
+        <entry key="$USER_HOME$/tests-B-DAT-200-pool_days/test_files" value="true" />
+      </map>
+    </option>
+  </component>
+</application>

@@ -1,0 +1,19 @@
+<keymap version="1" name="GNOME copy" parent="Default for GNOME">
+  <action id="CPP.NewCppFile">
+    <keyboard-shortcut first-keystroke="ctrl altGraph k" />
+  </action>
+  <action id="EditorToggleShowWhitespaces">
+    <keyboard-shortcut first-keystroke="ctrl alt numpad5" />
+  </action>
+  <action id="MoveLineDown">
+    <keyboard-shortcut first-keystroke="shift alt down" />
+  </action>
+  <action id="MoveLineUp">
+    <keyboard-shortcut first-keystroke="shift alt up" />
+  </action>
+  <action id="NewElementMenu">
+    <keyboard-shortcut first-keystroke="ctrl altGraph n" />
+  </action>
+  <action id="NextOccurence" />
+  <action id="PreviousOccurence" />
+</keymap>

@@ -1,0 +1,27 @@
+<application>
+  <component name="GeneralSettings">
+    <option name="showTipsOnStartup" value="false" />
+    <option name="confirmOpenNewProject2" value="-1" />
+  </component>
+  <component name="Registry">
+    <entry key="ide.experimental.ui" value="true" source="SYSTEM" />
+    <entry key="debugger.new.tool.window.layout" value="true" source="SYSTEM" />
+    <entry key="editor.focus.mode.color.light" value="5a5d63" source="SYSTEM" />
+    <entry key="editor.focus.mode.color.dark" value="5a5d63" source="SYSTEM" />
+    <entry key="moved.to.new.ui" value="true" source="SYSTEM" />
+    <entry key="clang.parameter.info" value="true" source="SYSTEM" />
+    <entry key="clion.hide.welcome.screen.onboarding.feedback.promo" value="false" source="MANAGER" />
+    <entry key="ide.balloon.shadow.size" value="0" source="SYSTEM" />
+    <entry key="ide.editor.tab.selection.animation" value="true" source="SYSTEM" />
+    <entry key="ide.new.editor.tabs.vertical.borders" value="true" source="SYSTEM" />
+    <entry key="ide.colorful.toolbar.gradient.radius" value="2000" source="SYSTEM" />
+    <entry key="new.search.everywhere.font.size.delta" value="4" source="SYSTEM" />
+  </component>
+  <component name="StatusBar">
+    <option name="widgets">
+      <map>
+        <entry key="webDeployment.default.server.widget" value="false" />
+      </map>
+    </option>
+  </component>
+</application>

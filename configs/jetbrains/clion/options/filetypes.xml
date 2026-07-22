@@ -1,0 +1,30 @@
+<application>
+  <component name="FileTypeManager" version="19">
+    <extensionMap>
+      <mapping pattern="file23:11:06" type="AUTO_DETECTED" />
+      <mapping pattern="file23:16:28" type="AUTO_DETECTED" />
+      <mapping pattern="file23:05:14_size" type="AUTO_DETECTED" />
+      <mapping pattern="input" type="AUTO_DETECTED" />
+      <mapping pattern="file23:16:28_size" type="AUTO_DETECTED" />
+      <mapping pattern="file22:56:49" type="AUTO_DETECTED" />
+      <mapping pattern="signature" type="AUTO_DETECTED" />
+      <mapping pattern="input2" type="AUTO_DETECTED" />
+      <mapping pattern="file_23:33:07_size" type="AUTO_DETECTED" />
+      <mapping pattern="file23:11:06_size" type="AUTO_DETECTED" />
+      <mapping pattern="save1" type="AUTO_DETECTED" />
+      <mapping pattern="file23:06:03" type="AUTO_DETECTED" />
+      <mapping pattern="map2" type="AUTO_DETECTED" />
+      <mapping pattern="file23:12:26" type="AUTO_DETECTED" />
+      <mapping pattern="file22:56:49_size" type="AUTO_DETECTED" />
+      <mapping pattern="file23:07:07_size" type="AUTO_DETECTED" />
+      <mapping pattern="file23:06:16_size" type="AUTO_DETECTED" />
+      <mapping pattern="file23:07:07" type="AUTO_DETECTED" />
+      <mapping pattern="file22:59:15" type="AUTO_DETECTED" />
+      <mapping pattern="mcp.json" type="JSON5" />
+      <mapping pattern="Makefile" type="Makefile" />
+      <mapping ext="config" type="PLAIN_TEXT" />
+      <mapping ext="nts" type="PLAIN_TEXT" />
+      <mapping ext="plantuml" type="PlantUML file" />
+    </extensionMap>
+  </component>
+</application>

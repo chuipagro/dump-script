@@ -1,0 +1,88 @@
+<application>
+  <component name="FileEditorProviderManager">{}</component>
+  <component name="NotRoamableUiSettings">
+    <option name="fontSize" value="13.0" />
+    <option name="ideScale" value="1.5" />
+    <option name="presentationModeIdeScale" value="1.25" />
+  </component>
+  <component name="PropertyService"><![CDATA[{
+  "keyToString": {
+    "FindSplitterProportion": "0.32992172",
+    "GeneralSettings.initiallyConfigured": "true",
+    "InstalledPluginsSearchHistory": "/suggested\nemoji",
+    "LAST_CALCULATED_COLOR_INDEX_KEY": "8",
+    "Markdown Split EditorLayout": "Editor only",
+    "MarketplacePluginsSearchHistory": "yarn\n/suggested\nemoji",
+    "NextRunPlatformUpdateBuild": "WS-262.8665.259",
+    "NextRunPlatformUpdateSelfBuild": "WS-253.33813.27",
+    "NextRunPlatformUpdateVersion": "2026.2",
+    "RunOnceActivity.TerminalFontSettingsService.fixStoredNonMonospacedFonts": "true",
+    "RunOnceActivity.TerminalOptionsProvider.migration.2025.1.1": "true",
+    "RunOnceActivity.VFSInitializationConditionsToFusReporter": "true",
+    "RunOnceActivity.git.modal.commit.toggle": "true",
+    "RunOnceActivity.llm.onboarding.window.launcher.v7": "true",
+    "RunOnceActivity.reset.auto.reparse.settings.to.default": "true",
+    "RunOnceActivity.webstorm.auto-popup.quick-doc.initialized": "true",
+    "RunOnceActivity.zielu.gittoolbox.worktree.promo.1": "true",
+    "SettingsSearchHistory": "pack\nzoom",
+    "TerminalCompletionPopupPromotion.shownCount": "3",
+    "ask.about.ctrl.y.shortcut.v2": "true",
+    "enter_selection_count": "5",
+    "evlsprt.253": "19c303f9800",
+    "evlsprt3.253": "7",
+    "experimental.ui.on.first.startup": "true",
+    "experimental.ui.used.version": "253.33813.27",
+    "fileTypeChangedCounter": "1",
+    "fontSizeToResetConsole": "13.0",
+    "fontSizeToResetEditor": "13.0",
+    "got.it.tooltip.Plugins Auto-Update": "1",
+    "got.it.tooltip.database.cloud.explorer.promo": "1",
+    "got.it.tooltip.js.debugger.terminal.start.debugger.from.url": "1",
+    "got.it.tooltip.trial.state.widget.trial.started.got.it.id": "1",
+    "ide.islands.ab3": "true",
+    "input.method.disabler.muted": "true",
+    "last_opened_file_path": "/home/chuipagro/projects/bedrock/front",
+    "llm.installer.last.toolwindow.state": "LLM_INSTALLER",
+    "migrated.non.roamable.values.from.general.settings": "true",
+    "previousColorScheme": "_@user_Islands Dark",
+    "registry.to.advanced.settings.migration.build": "WS-253.33813.27",
+    "terminal.gen.one.option.visible": "false",
+    "terminal.is.new.user": "true",
+    "trial.state.last.availability.check": "0",
+    "trial.state.last.state": "ACTIVE",
+    "ts.lib.d.ts.version": "5.9.3"
+  },
+  "keyToStringList": {
+    "file.chooser.recent.files": [
+      "/home/chuipagro/projects/led_scroller",
+      "/home/chuipagro/projects/wiki_bach",
+      "/home/chuipagro/projects/dashboard",
+      "/home/chuipagro/rattrapages",
+      "/home/chuipagro/projects/defender",
+      "/home/chuipagro/projects/bedrock-orga/bedrock-sdk",
+      "/home/chuipagro/projects/bedrock-orga/bedrock",
+      "/home/chuipagro/projects/suivi-helper",
+      "/home/chuipagro/tests-B-DAT-200-pool_days/test_files",
+      "/home/chuipagro/projects/bedrock/front"
+    ],
+    "fileTypeDetectors": [
+      "com.intellij.ide.scratch.ScratchFileServiceImpl$Detector",
+      "com.intellij.database.vfs.DbStorageFileType$Detector",
+      "com.intellij.docker.dockerFile.DockerFileTypeDetector",
+      "com.intellij.javascript.debugger.sourcemap.SourceMapFileType$MyFileTypeDetector",
+      "com.jetbrains.nodejs.util.NodeFileTypeDetector$JavaScriptFileTypeDetector",
+      "com.jetbrains.nodejs.util.NodeFileTypeDetector$TypeScriptFileTypeDetector",
+      "org.jetbrains.plugins.textmate.TextMateFileType$TextMateFileDetector"
+    ]
+  }
+}]]></component>
+  <component name="YarnPnpDependencyTreeJsonFileManager">
+    <pnp-file-to-dependency-tree-file-map>
+      <map>
+        <entry key="/home/chuipagro/projects/dashboard/api/.pnp.cjs" value="/home/chuipagro/.cache/JetBrains/WebStorm2025.3/javascript/yarn-pnp-dependency-tree/api-dependency-tree" />
+        <entry key="/home/chuipagro/projects/dashboard/front/.pnp.cjs" value="/home/chuipagro/.cache/JetBrains/WebStorm2025.3/javascript/yarn-pnp-dependency-tree/front-dependency-tree" />
+        <entry key="/home/chuipagro/projects/suivi-helper/frontend/.pnp.cjs" value="/home/chuipagro/.cache/JetBrains/WebStorm2025.3/javascript/yarn-pnp-dependency-tree/frontend-dependency-tree" />
+      </map>
+    </pnp-file-to-dependency-tree-file-map>
+  </component>
+</application>

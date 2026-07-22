@@ -1,0 +1,83 @@
+<application>
+  <component name="FileEditorProviderManager">{}</component>
+  <component name="LangManager">
+    <option name="languageName" value="ObjectiveC" />
+  </component>
+  <component name="NotRoamableUiSettings">
+    <option name="fontFace" value="Noto Sans" />
+    <option name="fontSize" value="13.0" />
+    <option name="presentationModeIdeScale" value="1.75" />
+  </component>
+  <component name="PropertyService"><![CDATA[{
+  "keyToString": {
+    "FileTemplates.CurrentTab": "Includes",
+    "FileTemplates.SelectedTemplate": "C File Header",
+    "LAST_CALCULATED_COLOR_INDEX_KEY": "6",
+    "MarketplacePluginsSearchHistory": "hask\nhas\nha\nh\n/sortBy:downloads",
+    "Migrate.Cfg.Render.Doc": "true",
+    "NewProjectWizard.generateOnboardingTips": "true",
+    "NextRunPlatformUpdateBuild": "CL-253.33514.20",
+    "NextRunPlatformUpdateSelfBuild": "CL-253.30387.78",
+    "NextRunPlatformUpdateVersion": "2025.3.5",
+    "Rad.Init.Cfg.1": "true",
+    "RunOnceActivity.RadMigrateCodeStyle": "true",
+    "RunOnceActivity.RadMigrateLiveTemplates": "true",
+    "RunOnceActivity.TerminalFontSettingsService.fixStoredNonMonospacedFonts": "true",
+    "RunOnceActivity.TerminalOptionsProvider.migration.2025.1.1": "true",
+    "RunOnceActivity.VFSInitializationConditionsToFusReporter": "true",
+    "RunOnceActivity.cache.folding.model.on.disk.true": "true",
+    "RunOnceActivity.cidr.test.framework.showIndexingAsTask": "true",
+    "RunOnceActivity.cidr.test.roots.only": "true",
+    "RunOnceActivity.git.modal.commit.toggle": "true",
+    "RunOnceActivity.reset.auto.reparse.settings.to.default": "true",
+    "RunOnceActivity.rust.first.ide.run": "true",
+    "RunOnceActivity.trace.commercial.popup.id": "true",
+    "RunOnceActivity.trace.non.commercial.popup.id": "true",
+    "TerminalCompletionPopupPromotion.shownCount": "2",
+    "ask.about.ctrl.y.shortcut.v2": "true",
+    "clion.initialConfigPerformed": "true",
+    "evlsprt.253": "19c25f2e000",
+    "evlsprt3.253": "7",
+    "experimental.ui.on.first.startup": "true",
+    "experimental.ui.used.version": "253.30387.78",
+    "fileTypeChangedCounter": "2",
+    "fontSizeToResetConsole": "13.0",
+    "fontSizeToResetEditor": "12.0",
+    "got.it.tooltip.NewFeaturesWidget": "1",
+    "got.it.tooltip.Plugins Auto-Update": "1",
+    "got.it.tooltip.de.achimonline.ansible_lint.status_bar_popup": "1",
+    "got.it.tooltip.settings.sync.in.settings": "1",
+    "ide.islands.ab3": "true",
+    "input.method.disabler.muted": "true",
+    "last_opened_file_path": "/home/chuipagro/projects/defender",
+    "llm.installer.last.toolwindow.state": "LLM_INSTALLER",
+    "migrated.non.roamable.values.from.general.settings": "true",
+    "mt.NUMBER_OF_LAUNCHES": "9",
+    "onboarding.generation.number": "2",
+    "previousColorScheme": "_@user_Material Oceanic",
+    "registry.to.advanced.settings.migration.build": "CL-253.30387.78",
+    "terminal.gen.one.option.visible": "false",
+    "terminal.is.new.user": "true",
+    "trial.state.last.availability.check": "0",
+    "trial.state.last.state": "TRIAL_GRACE",
+    "ts.lib.d.ts.version": "5.9.3",
+    "whats.new.last.shown.version": "2025-3.2-30387-37c31239850e0a0f32552fee2d8f78231a77ceef"
+  },
+  "keyToStringList": {
+    "file.chooser.recent.files": [
+      "/home/chuipagro/projects/neuroneNetwork",
+      "/home/chuipagro/projects/defender"
+    ],
+    "fileTypeDetectors": [
+      "com.intellij.ide.scratch.ScratchFileServiceImpl$Detector",
+      "com.intellij.database.vfs.DbStorageFileType$Detector",
+      "com.intellij.docker.dockerFile.DockerFileTypeDetector",
+      "com.jetbrains.rider.cpp.fileType.CppHeaderFileTypeDetector",
+      "com.intellij.javascript.debugger.sourcemap.SourceMapFileType$MyFileTypeDetector",
+      "com.jetbrains.nodejs.util.NodeFileTypeDetector$JavaScriptFileTypeDetector",
+      "com.jetbrains.nodejs.util.NodeFileTypeDetector$TypeScriptFileTypeDetector",
+      "org.jetbrains.plugins.textmate.TextMateFileType$TextMateFileDetector"
+    ]
+  }
+}]]></component>
+</application>
