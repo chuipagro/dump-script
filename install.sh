@@ -296,15 +296,13 @@ run_step "Browser" "Install Brave browser" \
 report_section "🎵 Media & Entertainment"
 
 run_step "Media" "Add Spotify GPG key & repo" \
-  'curl -sS https://download.spotify.com/debian/pubkey_C85668DF69375001.gpg \
-    | sudo gpg --dearmor --yes -o /etc/apt/trusted.gpg.d/spotify.gpg && \
-   echo "deb http://repository.spotify.com stable non-free" \
-    | sudo tee /etc/apt/sources.list.d/spotify.list > /dev/null && \
-   sudo apt-get update -q'
+  'curl -sS https://download.spotify.com/debian/pubkey_5384CE82BA52C83A.asc | sudo gpg --dearmor --yes -o /etc/apt/trusted.gpg.d/spotify.gpg
+echo "deb https://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list
+'
 
 run_step "Media" "Install Spotify" \
-  "sudo DEBIAN_FRONTEND=noninteractive apt-get install -y -q spotify-client"
-
+  "sudo apt-get update && sudo apt-get install spotify-client"
+  
 run_step "Media" "Install Discord" \
   'TMP_DEB="$(mktemp /tmp/discord.XXXXXX.deb)" && \
    curl -fsSL "https://discordapp.com/api/download?platform=linux&format=deb" -o "$TMP_DEB" && \
@@ -424,11 +422,6 @@ run_step "Python" "Install Python 3 + pip + venv" \
 run_step "Haskell" "Install GHC + Cabal" \
   "sudo DEBIAN_FRONTEND=noninteractive apt-get install -y -q ghc cabal-install"
 
-# SFML
-run_step "SFML" "Install SFML dev libraries" \
-  "sudo DEBIAN_FRONTEND=noninteractive apt-get install -y -q \
-    libsfml-dev libsfml-audio2.6t64 libsfml-graphics2.6t64 \
-    libsfml-network2.6t64 libsfml-system2.6t64 libsfml-window2.6t64"
 
 # =============================================================================
 # 10. FLATPAK APPS
@@ -439,16 +432,10 @@ run_step "Flatpak" "Install Flatpak" \
   "sudo DEBIAN_FRONTEND=noninteractive apt-get install -y -q flatpak"
 
 run_step "Flatpak" "Add Flathub remote" \
-  "flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo"
+  "flatpak remote-add --if-not-exists --user flathub https://dl.flathub.org/repo/flathub.flatpakrepo"
 
-run_step "Flatpak" "Install Arduino IDE 2" \
-  "flatpak install -y flathub cc.arduino.IDE2"
-
-run_step "Flatpak" "Install Postman" \
-  "flatpak install -y flathub com.getpostman.Postman"
-
-run_step "Flatpak" "Install pgAdmin 4" \
-  "flatpak install -y flathub org.pgadmin.pgadmin4"
+run_step "Flatpak" "Install Arduino IDE 2, Postman, pgAdmin 4" \
+  "flatpak install -y --user --noninteractive flathub cc.arduino.IDE2 com.getpostman.Postman org.pgadmin.pgadmin4"
 
 # =============================================================================
 # 11. VS CODE
@@ -469,31 +456,145 @@ run_step "VSCode" "Install VS Code" \
   "sudo DEBIAN_FRONTEND=noninteractive apt-get install -y -q code"
 
 # =============================================================================
-# 12. JETBRAINS TOOLBOX
+# 12. JETBRAINS IDEs
 # =============================================================================
-report_section "🧰 JetBrains Toolbox"
+report_section "🧰 JetBrains IDEs"
 
-run_step "JetBrains" "Download JetBrains Toolbox" \
+# ── Helper: download + install one JetBrains IDE from official API ────────────
+# Usage: _jb_install <API_CODE> <APP_NAME> <BIN_NAME>
+#   API_CODE : product code used by JetBrains API (CL, WS, …)
+#   APP_NAME : display name used for the .desktop entry (CLion, WebStorm, …)
+#   BIN_NAME : binary name inside the extracted tarball (clion, webstorm, …)
+_jb_install() {
+  local code="$1" app="$2" bin="$3"
+  local api="https://data.services.jetbrains.com/products/releases?code=${code}&latest=true&type=release"
+
+  local url version
+  url=$(curl -fsSL "$api" \
+    | python3 -c "import sys,json; d=json.load(sys.stdin); print(d['${code}'][0]['downloads']['linux']['link'])")
+  version=$(curl -fsSL "$api" \
+    | python3 -c "import sys,json; d=json.load(sys.stdin); print(d['${code}'][0]['version'])")
+
+  local tmp="/tmp/${bin}-latest.tar.gz"
+  local dest="$HOME/.local/share/JetBrains/${app}"
+
+  curl -fsSL "$url" -o "$tmp"
+  mkdir -p "$dest"
+  tar -xzf "$tmp" -C "$dest" --strip-components=1
+
+  # Symlink binary to ~/.local/bin
+  mkdir -p "$HOME/.local/bin"
+  ln -sf "$dest/bin/${bin}" "$HOME/.local/bin/${bin}"
+
+  # .desktop entry
+  mkdir -p "$HOME/.local/share/applications"
+  cat > "$HOME/.local/share/applications/${bin}.desktop" <<DESK
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=${app}
+Exec=$dest/bin/${bin} %u
+Icon=$dest/bin/${bin}.svg
+Terminal=false
+StartupWMClass=jetbrains-${bin}
+Categories=Development;IDE;
+DESK
+
+  # Restore config — target the versioned dir JetBrains expects
+  local cfg_dir="$HOME/.config/JetBrains/${app}${version%.*}"
+  mkdir -p "$cfg_dir"
+  rsync -a --exclude='.lock' \
+    "$SCRIPT_DIR/configs/jetbrains/${bin}/" \
+    "$cfg_dir/"
+
+  echo "✅ ${app} ${version} installed → ${dest}"
+  echo "   Config restored → ${cfg_dir}"
+}
+
+# Export so run_step's bash -c subshell can see the function and SCRIPT_DIR
+export -f _jb_install
+export SCRIPT_DIR
+
+run_step "CLion" "Download, install & configure CLion" \
+  '_jb_install CL CLion clion'
+
+run_step "WebStorm" "Download, install & configure WebStorm" \
+  '_jb_install WS WebStorm webstorm'
+
+# ── JetBrains Toolbox (optional tray manager — non-blocking) ─────────────────
+run_step "JetBrains" "Install JetBrains Toolbox (background)" \
   'TOOLBOX_URL=$(curl -fsSL "https://data.services.jetbrains.com/products/releases?code=TBA&latest=true&type=release" \
-    | python3 -c "import sys,json; d=json.load(sys.stdin); print(d[\"TBA\"][0][\"downloads\"][\"linux\"][\"link\"])")
-   mkdir -p "$HOME/.local/JetBrainsToolbox"
-   curl -fsSL "$TOOLBOX_URL" -o /tmp/jetbrains-toolbox.tar.gz'
+     | python3 -c "import sys,json; d=json.load(sys.stdin); print(d[\"TBA\"][0][\"downloads\"][\"linux\"][\"link\"])")
+   curl -fsSL "$TOOLBOX_URL" -o /tmp/jetbrains-toolbox.tar.gz
+   tar -xzf /tmp/jetbrains-toolbox.tar.gz -C /tmp/
+   TOOLBOX_BIN=$(find /tmp -name "jetbrains-toolbox" -type f | head -1)
+   chmod +x "$TOOLBOX_BIN"
+   mkdir -p "$HOME/.local/share/JetBrains/Toolbox/bin"
+   cp "$TOOLBOX_BIN" "$HOME/.local/share/JetBrains/Toolbox/bin/jetbrains-toolbox"
+   ln -sf "$HOME/.local/share/JetBrains/Toolbox/bin/jetbrains-toolbox" "$HOME/.local/bin/jetbrains-toolbox"
+   nohup "$HOME/.local/share/JetBrains/Toolbox/bin/jetbrains-toolbox" >/dev/null 2>&1 &
+   disown
+   echo "✅ Toolbox installed and launched in background (check system tray)"'
 
-run_step "JetBrains" "Extract and install Toolbox" \
-  'tar -xzf /tmp/jetbrains-toolbox.tar.gz -C /tmp/ && \
-   TOOLBOX_BIN=$(find /tmp -name "jetbrains-toolbox" -type f | head -1) && \
-   chmod +x "$TOOLBOX_BIN" && \
-   "$TOOLBOX_BIN" &
-   sleep 5
-   echo "JetBrains Toolbox launched — it will appear in your system tray"'
+# =============================================================================
+# 13. GITHUB CLI
+# =============================================================================
+report_section "🐙 GitHub CLI"
 
-run_step "JetBrains" "Restore CLion config" \
-  'mkdir -p "$HOME/.config/JetBrains/CLion2025.3" && \
-   rsync -a "$SCRIPT_DIR/configs/jetbrains/clion/" "$HOME/.config/JetBrains/CLion2025.3/"'
+run_step "GitHub CLI" "Add GitHub CLI GPG key & repo" \
+  'curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg \
+    | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg \
+    && sudo chmod go+r /usr/share/keyrings/githubcli-archive-keyring.gpg \
+    && echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" \
+    | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null'
 
-run_step "JetBrains" "Restore WebStorm config" \
-  'mkdir -p "$HOME/.config/JetBrains/WebStorm2025.3" && \
-   rsync -a "$SCRIPT_DIR/configs/jetbrains/webstorm/" "$HOME/.config/JetBrains/WebStorm2025.3/"'
+run_step "GitHub CLI" "Install gh" \
+  "sudo apt-get update -q && sudo DEBIAN_FRONTEND=noninteractive apt-get install -y -q gh"
+
+run_step "GitHub CLI" "Authenticate with GitHub (browser)" \
+  "gh auth login --git-protocol ssh --web"
+
+# ─── Pull Anthropic API key from a private GitHub Gist ───────────────────────
+# Store your key in a private gist with a single file named ANTHROPIC_API_KEY
+# Then set ANTHROPIC_GIST_ID=<your-gist-id> before running this script,
+# or it will prompt you interactively.
+# =============================================================================
+# 14. AI TOOLS — ANTIGRAVITY + CLAUDE CODE
+# =============================================================================
+report_section "🤖 AI Tools"
+
+run_step "AI Tools" "Fetch Anthropic API key from GitHub Gist" \
+  'if [[ -z "${ANTHROPIC_GIST_ID:-}" ]]; then
+     echo "ℹ️  No ANTHROPIC_GIST_ID set — skipping automatic key fetch."
+     echo "   Set it with: export ANTHROPIC_GIST_ID=<your-gist-id>"
+     exit 0
+   fi
+   KEY=$(gh gist view "$ANTHROPIC_GIST_ID" --raw 2>/dev/null | grep -v "^#" | tr -d "[:space:]")
+   if [[ -z "$KEY" ]]; then
+     echo "❌ Could not read key from gist $ANTHROPIC_GIST_ID" >&2; exit 1
+   fi
+   # Persist to shell configs
+   for RC in "$HOME/.bashrc" "$HOME/.zshrc"; do
+     grep -q "ANTHROPIC_API_KEY" "$RC" 2>/dev/null && \
+       sed -i "s|^export ANTHROPIC_API_KEY=.*|export ANTHROPIC_API_KEY=\"$KEY\"|" "$RC" || \
+       echo "export ANTHROPIC_API_KEY=\"$KEY\"" >> "$RC"
+   done
+   export ANTHROPIC_API_KEY="$KEY"
+   echo "✅ ANTHROPIC_API_KEY written to ~/.bashrc and ~/.zshrc"'
+
+run_step "Antigravity" "Add Antigravity APT repo" \
+  'sudo mkdir -p /etc/apt/keyrings
+   curl -fsSL https://us-central1-apt.pkg.dev/doc/repo-signing-key.gpg \
+     | sudo gpg --dearmor --yes -o /etc/apt/keyrings/antigravity-repo-key.gpg
+   echo "deb [signed-by=/etc/apt/keyrings/antigravity-repo-key.gpg] \
+https://us-central1-apt.pkg.dev/projects/antigravity-auto-updater-dev/ antigravity-debian main" \
+     | sudo tee /etc/apt/sources.list.d/antigravity.list > /dev/null'
+
+run_step "Antigravity" "Install Antigravity" \
+  "sudo apt-get update -q && sudo DEBIAN_FRONTEND=noninteractive apt-get install -y -q antigravity"
+
+run_step "Claude Code" "Install Claude Code CLI" \
+  "bash \"$SCRIPT_DIR/claude-install.sh\""
 
 # =============================================================================
 # DONE
