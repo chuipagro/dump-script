@@ -25,17 +25,18 @@ dump-script/
 | Category | Apps |
 |---|---|
 | **Browser** | Brave |
-| **Media** | Spotify, Discord, VLC, GIMP |
+| **Media** | Spotify, Discord, VLC, GIMP, Steam |
 | **Security** | Mullvad VPN |
 | **Dev tools** | Docker CE (+ compose, buildx), VirtualBox 7.2, Git, cmake, build-essential, jq, fd-find |
 | **Node** | NVM → Node v24 LTS + yarn, @nestjs/cli, expo-cli, @expo/ngrok, corepack |
 | **Python** | Python 3, pip, venv |
 | **Haskell** | GHC, Cabal |
-| **SFML** | libsfml-dev (full) |
-| **Flatpak** | Arduino IDE 2, Postman, pgAdmin 4 |
+| **Graphics** | SDL2 (+ image, ttf, mixer, gfx, net), SFML 2.6, CSFML 2.6 |
+| **Flatpak** | Arduino IDE 2, Postman, pgAdmin 4, Bottles |
 | **IDE** | VS Code, JetBrains Toolbox |
 | **Shell** | ZSH + Oh-My-Zsh + dotfiles restored |
 | **Git** | user config + colors + ssh key generated |
+| **Repos** | github-repo-searcher → `~/github-repo-searcher` |
 
 ## 🚀 Usage
 

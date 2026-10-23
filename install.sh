@@ -291,7 +291,7 @@ run_step "Browser" "Install Brave browser" \
   "sudo DEBIAN_FRONTEND=noninteractive apt-get install -y -q brave-browser"
 
 # =============================================================================
-# 5. MEDIA — SPOTIFY, DISCORD, VLC, GIMP
+# 5. MEDIA — SPOTIFY, DISCORD, VLC, GIMP, STEAM
 # =============================================================================
 report_section "🎵 Media & Entertainment"
 
@@ -314,6 +314,13 @@ run_step "Media" "Install VLC" \
 
 run_step "Media" "Install GIMP" \
   "sudo DEBIAN_FRONTEND=noninteractive apt-get install -y -q gimp"
+
+# Steam needs 32-bit libs; pre-accept the license so the install doesn't block.
+run_step "Media" "Install Steam" \
+  'sudo dpkg --add-architecture i386 && sudo apt-get update -q && \
+   echo "steam steam/question select I AGREE" | sudo debconf-set-selections && \
+   echo "steam steam/license note \"\"" | sudo debconf-set-selections && \
+   sudo DEBIAN_FRONTEND=noninteractive apt-get install -y -q steam-installer'
 
 # =============================================================================
 # 6. SECURITY — MULLVAD VPN
@@ -382,7 +389,7 @@ run_step "VirtualBox" "Add user to vboxusers group" \
   "sudo usermod -aG vboxusers \$(whoami)"
 
 # =============================================================================
-# 9. LANGUAGES — NODE (NVM) + PYTHON + HASKELL + SFML
+# 9. LANGUAGES — NODE (NVM) + PYTHON + HASKELL + SDL2/SFML/CSFML
 # =============================================================================
 report_section "🔤 Languages & Runtimes"
 
@@ -421,6 +428,29 @@ run_step "Python" "Install Python 3 + pip + venv" \
 # Haskell
 run_step "Haskell" "Install GHC + Cabal" \
   "sudo DEBIAN_FRONTEND=noninteractive apt-get install -y -q ghc cabal-install"
+
+# Graphics libs — all from apt so versions match (SFML 2.6 ↔ CSFML 2.6)
+run_step "Graphics" "Install SDL2 + extensions" \
+  "sudo DEBIAN_FRONTEND=noninteractive apt-get install -y -q pkg-config \
+    libsdl2-dev libsdl2-image-dev libsdl2-ttf-dev libsdl2-mixer-dev \
+    libsdl2-gfx-dev libsdl2-net-dev"
+
+run_step "Graphics" "Install SFML" \
+  "sudo DEBIAN_FRONTEND=noninteractive apt-get install -y -q libsfml-dev"
+
+run_step "Graphics" "Install CSFML" \
+  "sudo DEBIAN_FRONTEND=noninteractive apt-get install -y -q libcsfml-dev"
+
+# Compile + link a tiny program against each lib to prove the setup works.
+run_step "Graphics" "Check SDL2 / SFML / CSFML build" \
+  'T="$(mktemp -d)" && trap "rm -rf \"$T\"" EXIT
+   printf "#include <SDL2/SDL.h>\nint main(void){SDL_version v;SDL_GetVersion(&v);return 0;}\n" > "$T/sdl.c"
+   printf "#include <SFML/Graphics.hpp>\nint main(){sf::Texture t;return 0;}\n" > "$T/sfml.cpp"
+   printf "#include <SFML/Graphics.h>\nint main(void){sfTexture_destroy(NULL);return 0;}\n" > "$T/csfml.c"
+   gcc "$T/sdl.c" -o "$T/sdl" $(pkg-config --cflags --libs sdl2 SDL2_image SDL2_ttf SDL2_mixer) &&
+   g++ "$T/sfml.cpp" -o "$T/sfml" -lsfml-graphics -lsfml-window -lsfml-system &&
+   gcc "$T/csfml.c" -o "$T/csfml" -lcsfml-graphics -lcsfml-window -lcsfml-system &&
+   echo "✅ SDL2 $(pkg-config --modversion sdl2), SFML $(pkg-config --modversion sfml-all), CSFML $(pkg-config --modversion csfml-all) OK"'
 
 
 # =============================================================================
@@ -555,6 +585,13 @@ run_step "GitHub CLI" "Install gh" \
 
 run_step "GitHub CLI" "Authenticate with GitHub (browser)" \
   "gh auth login --git-protocol ssh --web"
+
+run_step "GitHub CLI" "Clone github-repo-searcher" \
+  'if [ -d "$HOME/github-repo-searcher" ]; then
+     echo "ℹ️  $HOME/github-repo-searcher already exists — skipping clone."
+   else
+     gh repo clone chuipagro/github-repo-searcher "$HOME/github-repo-searcher"
+   fi'
 
 # ─── Pull Anthropic API key from a private GitHub Gist ───────────────────────
 # Store your key in a private gist with a single file named ANTHROPIC_API_KEY
