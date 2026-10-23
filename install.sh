@@ -434,8 +434,8 @@ run_step "Flatpak" "Install Flatpak" \
 run_step "Flatpak" "Add Flathub remote" \
   "flatpak remote-add --if-not-exists --user flathub https://dl.flathub.org/repo/flathub.flatpakrepo"
 
-run_step "Flatpak" "Install Arduino IDE 2, Postman, pgAdmin 4" \
-  "flatpak install -y --user --noninteractive flathub cc.arduino.IDE2 com.getpostman.Postman org.pgadmin.pgadmin4"
+run_step "Flatpak" "Install Arduino IDE 2, Postman, pgAdmin 4, Bottles" \
+  "flatpak install -y --user --noninteractive flathub cc.arduino.IDE2 com.getpostman.Postman org.pgadmin.pgadmin4 com.usebottles.bottles"
 
 # =============================================================================
 # 11. VS CODE
@@ -445,12 +445,14 @@ report_section "💻 VS Code"
 run_step "VSCode" "Add Microsoft GPG key" \
   'wget -qO- https://packages.microsoft.com/keys/microsoft.asc \
     | gpg --dearmor \
-    | sudo tee /etc/apt/keyrings/packages.microsoft.gpg > /dev/null'
+    | sudo tee /usr/share/keyrings/microsoft.gpg > /dev/null'
 
+# Same file + keyring the `code` package manages itself — a second entry with a
+# different Signed-By makes apt refuse to read any source.
 run_step "VSCode" "Add VS Code repository" \
-  'echo "deb [arch=amd64 signed-by=/etc/apt/keyrings/packages.microsoft.gpg] \
-    https://packages.microsoft.com/repos/code stable main" \
-    | sudo tee /etc/apt/sources.list.d/vscode.list > /dev/null && sudo apt-get update -q'
+  'sudo rm -f /etc/apt/sources.list.d/vscode.list
+   printf "Types: deb\nURIs: https://packages.microsoft.com/repos/code\nSuites: stable\nComponents: main\nArchitectures: amd64\nSigned-By: /usr/share/keyrings/microsoft.gpg\n" \
+    | sudo tee /etc/apt/sources.list.d/vscode.sources > /dev/null && sudo apt-get update -q'
 
 run_step "VSCode" "Install VS Code" \
   "sudo DEBIAN_FRONTEND=noninteractive apt-get install -y -q code"
